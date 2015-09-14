@@ -1,0 +1,11 @@
+background(#080707);
+size(500,500);
+
+//Balls, balls everywhere
+
+
+for (int x = 20; x < 480; x = x+25) {
+  for (int y = 20; y < 480; y = y+25) {
+    ellipse (x, y, 20, 20);
+  }
+}
