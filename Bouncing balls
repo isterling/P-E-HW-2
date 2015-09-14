@@ -1,0 +1,70 @@
+int rad = 20;        // Width of circle
+float xpos, ypos;    // Starting position of circle 
+float xpos2, ypos2;  // Starting position of circle 2
+
+float xspeed = 4.8;  // Speed of the circle horizontally
+float yspeed = 4.8;  // Speed of the circle vertically
+
+int xdirection = 3;  // Left or Right
+int ydirection = 3;  // Top to Bottom
+int xdirection2 = 3;
+int ydirection2 = 3;
+
+
+
+void setup() 
+{
+  size(600, 400);
+  noStroke();
+  frameRate(30);
+  ellipseMode(RADIUS);
+  // Set the starting position of the circle
+  xpos = width/2;
+  ypos = height/2;
+  xpos2 = width/4;
+  ypos2 = height/4;
+}
+
+void draw() 
+{
+  background(255);
+  
+  // Update the position of circle 1
+  xpos = xpos + ( xspeed * xdirection );
+  ypos = ypos + ( yspeed * ydirection );
+  
+    // Update the position of circle 1
+  xpos2 = xpos2 + ( xspeed * xdirection2 );
+  ypos2 = ypos2 + ( yspeed * ydirection2 );
+  
+  // Test to see if circle 1 exceeds the boundaries of the screen
+  // If it does, reverse its direction by multiplying by -1
+  if (xpos > width-rad || xpos < rad) {
+    xdirection *= -1;
+  }
+  if (ypos > height-rad || ypos < rad) {
+    ydirection *= -1;
+  }
+  
+
+
+    // Test to see if circle 2 exceeds the boundaries of the screen
+  // If it does, reverse its direction by multiplying by -1
+  if (xpos2 > width-rad || xpos2 < rad) {
+    xdirection2 *= -1;
+  }
+  if (ypos2 > height-rad || ypos2 < rad) {
+    ydirection2 *= -1;
+  }
+  
+  
+  //Circle properties
+  ellipse(xpos, ypos, rad, rad);
+  fill(242,37,44);
+  
+   //Circle properties
+  ellipse(xpos2, ypos2, rad, rad);
+  fill(37,242,48);
+}
+
+
