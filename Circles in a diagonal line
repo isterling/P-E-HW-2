@@ -1,0 +1,17 @@
+
+background(#080707);
+size(500,500);
+
+//diagonal balls
+int x = 20;
+int x2 = 480;
+int y = 20;
+int y2 = 480;
+while (x < 480) {
+  noStroke();
+  ellipse(x,y,30,30);
+  x = x+25;
+  x2 = x2 - 25;
+  y = y+25;
+  y2 = y2+25;
+}
